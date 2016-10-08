@@ -4,7 +4,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 include_once ("db/connect.php");
   
-  echo "HOYY HOYY HOYY";
+  
 
 
 ?>
