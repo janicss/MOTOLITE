@@ -7,8 +7,44 @@ include_once ("db/connect.php");
 
 
   if(@$_POST['login']){
+    $username = @$_POST['username'];
+    $password = @$_POST['password'];
 
-    header('Location:index.php');
+    $sql = "SELECT user_id, user_fname, user_lname, user_pwd, user_level_id, branch_id FROM user WHERE user_id='$username'";
+    $query = mysqli_query($conn, $sql); 
+
+    if($query){
+      $row = mysqli_fetch_array($query, MYSQLI_NUM);
+      $usr = $row[0];
+      $fname = $row[1];
+      $lname = $row[2];
+      $pwd = $row[3];
+      $lvl = $row[4];
+      $brn = $row[5];
+      // echo $usr;
+      // echo $fname;
+      // echo $lname;
+      // echo $pwd;
+      // echo $lvl;
+      // echo $brn;  
+    }
+
+    if($username == $usr && $password == $pwd){
+    $_SESSION['usr_id'] = $usr;
+    $_SESSION['usr_fname'] = $fname;
+    $_SESSION['usr_lname'] = $lname;
+    $_SESSION['usr_lvl'] = $lvl;
+    $_SESSION['usr_brn'] = $brn;
+
+    
+    header('Location: index.php');
+
+    }
+
+
+
+
+    // header('Location:index.php');
 
   }
 
@@ -57,10 +93,10 @@ include_once ("db/connect.php");
             <form role="form" action="login.php" method="POST">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" name="username" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
               </div>
               <div>
                 <input type="submit" name="login" class="btn btn-default" value="Log In" />
@@ -79,7 +115,7 @@ include_once ("db/connect.php");
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Motolite</h1>
+                  <h1><i class="fa fa-bolt"></i> Motolite</h1>
                   <p>©2016 All Rights Reserved. Motolite Quick-Start Battery Inventory System. </p>
                 </div>
               </div>
