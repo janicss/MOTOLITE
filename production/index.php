@@ -51,8 +51,18 @@ include_once ("db/connect.php");
       	<!--  sidebar and navbar -->
        <?php include "sidebar2.php" ?>
 
+
+
+
         <!-- page content -->
         <div class="right_col" role="main">
+
+
+          <h1> WALEYYYYYY</h1>
+
+
+
+
          <!-- top tiles -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
