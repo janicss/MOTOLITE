@@ -1,3 +1,25 @@
+<?php
+  
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
+include_once ("db/connect.php");
+  
+  if(isset($_SESSION['usr_id'])){
+    $usr_fname = $_SESSION['usr_fname'];
+    $usr_lname= $_SESSION['usr_lname'];
+
+
+
+  }else{
+    header('location: login.php');
+    die();
+  }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

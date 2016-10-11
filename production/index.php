@@ -49,7 +49,7 @@ include_once ("db/connect.php");
       <div class="main_container">
 
       	<!--  sidebar and navbar -->
-       <?php include "sidebar.php" ?>
+       <?php include "sidebar2.php" ?>
 
         <!-- page content -->
         <div class="right_col" role="main">
