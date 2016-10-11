@@ -57,16 +57,12 @@ include_once ("db/connect.php");
         <!-- page content -->
         <div class="right_col" role="main">
 
-<<<<<<< HEAD
 
           <h1> WALEYYYYYY fasdfjalskgjalksjlejger</h1>
 
 
 
 
-=======
-          <h1> HELLO WORLD!!</h1>
->>>>>>> 93243c630f1b667df3b3c1fc123c998abeea370d
          <!-- top tiles -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
